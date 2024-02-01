@@ -5,7 +5,7 @@ import com.nhnacademy.edu.springframework.project.repository.StudentService;
 import com.nhnacademy.edu.springframework.project.repository.Students;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 public class DefaultStudentService implements StudentService {
@@ -21,9 +21,9 @@ public class DefaultStudentService implements StudentService {
     @Override
     public Collection<Student> getStudentsOrderByScore() {
         Students studentRepository = CsvStudents.getInstance();
-        // TODO 4 : 성적 순으로 학생 정보(Student)를 반환합니다.
+        // DO 4 : 성적 순으로 학생 정보(Student)를 반환합니다.
         // 소팅 문제입니다. Java Stream API 의 소팅 관련 메서드를 사용하세요.
-        return studentRepository.findAll();
+        return studentRepository.findAll().stream().sorted(Comparator.comparing(Student::getScore).reversed()).collect(Collectors.toList());
     }
 
 }
