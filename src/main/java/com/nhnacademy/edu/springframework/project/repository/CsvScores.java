@@ -1,6 +1,9 @@
 package com.nhnacademy.edu.springframework.project.repository;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -8,6 +11,7 @@ import java.util.List;
 
 
 @Slf4j
+@Service("csvScore")
 public class CsvScores implements Scores {
     private final String SCORE_PATH = "src/main/resources/data/score.csv";
 

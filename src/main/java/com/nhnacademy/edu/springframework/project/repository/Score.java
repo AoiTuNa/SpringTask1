@@ -1,10 +1,14 @@
 package com.nhnacademy.edu.springframework.project.repository;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
+
 
 public class Score implements Comparable<Score>{
     private final int studentSeq;
     private final int score;
+
 
     public Score(int studentSeq, int score) {
         this.studentSeq = studentSeq;

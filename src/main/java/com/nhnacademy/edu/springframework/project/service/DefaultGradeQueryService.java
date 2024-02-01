@@ -1,11 +1,13 @@
 package com.nhnacademy.edu.springframework.project.service;
 
 import com.nhnacademy.edu.springframework.project.repository.*;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@Service("defaultGradeQueryService")
 public class DefaultGradeQueryService implements GradeQueryService {
     @Override
     public List<Score> getScoreByStudentName(String name) {

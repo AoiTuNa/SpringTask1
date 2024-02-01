@@ -2,6 +2,8 @@ package com.nhnacademy.edu.springframework.project.repository;
 
 import com.nhnacademy.edu.springframework.project.service.Student;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Slf4j
+@Service("csvStudent")
 public class CsvStudents implements Students {
 
     private static final List<Student> students = new ArrayList<>();

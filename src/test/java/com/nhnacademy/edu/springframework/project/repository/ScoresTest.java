@@ -1,29 +1,36 @@
 package com.nhnacademy.edu.springframework.project.repository;
 
+import com.nhnacademy.edu.springframework.project.configuration.MainConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest(classes = MainConfig.class)
 class ScoresTest {
 
+    @Autowired
+    private Scores scores; // 스프링 컨텍스트로부터 Scores 빈 주입 받기
 
     @Test
     void load(){
-        Scores scores = CsvScores.getInstance();
-        scores.load();
+        scores = CsvScores.getInstance();
+        scores.load(); // 주입 받은 빈 사용
         assertNotNull(scores.findAll());
     }
 
     @Test
     void findAll() {
+        scores = CsvScores.getInstance();
         Score testTrueScore = new Score(2,80);
         Score testFalseScore = new Score(1,60);
-        Scores scores = CsvScores.getInstance();
-        scores.load();
+        scores.load(); // 주입 받은 빈 사용
         assertTrue(scores.findAll().contains(testTrueScore));
         assertFalse(scores.findAll().contains(testFalseScore));
     }
