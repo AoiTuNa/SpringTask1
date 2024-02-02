@@ -11,8 +11,8 @@ import java.util.Objects;
 public class Student {
     private final int seq;
     private final String name;
-    @Setter
 
+    @Setter
     private Score score;
 
     public Student(int seq, String name) {
