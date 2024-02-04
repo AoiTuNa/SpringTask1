@@ -15,16 +15,12 @@ public class CsvScores implements Scores {
     private static final List<Score> scores =new ArrayList<>();
     private CsvScores(){}
 
-    /** DO 2 :
-     * Java Singleton 패턴으로 getInstance() 를 구현하세요.
-     **/
 
     public static Scores getInstance() {
 
         return LazyHolder.instance;
     }
 
-    // DO 5 : score.csv 파일에서 데이터를 읽어 멤버 변수에 추가하는 로직을 구현하세요.
     @Override
     public void load() {
         scores.clear();

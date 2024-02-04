@@ -15,15 +15,11 @@ public class CsvStudents implements Students {
     private static final List<Student> students = new ArrayList<>();
     private CsvStudents(){}
 
-    /** DO 3 :
-     * Java Singleton 패턴으로 getInstance() 를 구현하세요.
-     **/
+
     public static Students getInstance() {
         return LazyHolder.instance;
     }
 
-    // DO 7 : student.csv 파일에서 데이터를 읽어 클래스 멤버 변수에 추가하는 로직을 구현하세요.
-    // 데이터를 적재하고 읽기 위해서, 적절한 자료구조를 사용하세요.
     @Override
     public void load() {
         students.clear();
@@ -47,10 +43,6 @@ public class CsvStudents implements Students {
         return students;
     }
 
-    /**
-     * DO 8 : students 데이터에 score 정보를 추가하세요.
-     * @param scores
-     */
     @Override
     public void merge(Collection<Score> scores) {
         for(Student student : students){
