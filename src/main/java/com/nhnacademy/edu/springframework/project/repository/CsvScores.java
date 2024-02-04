@@ -1,9 +1,6 @@
 package com.nhnacademy.edu.springframework.project.repository;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -20,13 +17,6 @@ public class CsvScores implements Scores {
     private static final List<Score> scores =new ArrayList<>();
     public CsvScores(){}
 
-    /** DO 2 :
-     * Java Singleton 패턴으로 getInstance() 를 구현하세요.
-     **/
-
-
-
-    // DO 5 : score.csv 파일에서 데이터를 읽어 멤버 변수에 추가하는 로직을 구현하세요.
     @Override
     public void load() {
         String line ="";

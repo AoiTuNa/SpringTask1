@@ -9,8 +9,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.Collection;
 
 public class Main {
-
-    // DO 9 - 성공적으로 실행되어야 합니다.
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.nhnacademy.edu.springframework.project");
         DataLoadService dataLoadService = context.getBean("csvDataLoadService",CsvDataLoadService.class);
